@@ -7,7 +7,6 @@ const sortedBands = bands.sort((a,b) =>{
     let firstWordInA = article.includes((a.split(" ")[0]).toLowerCase())
     let firstWordInB = article.includes((b.split(" ")[0]).toLowerCase())
 
-
     if (firstWordInA && firstWordInB){
         return a > b
 
@@ -23,3 +22,10 @@ const sortedBands = bands.sort((a,b) =>{
     }
 })
 
+const bandsList = document.querySelector('#bands')
+
+bandsList.innerHTML = sortedBands.map(band=>{
+    return ` <li>${band}</li> `
+    
+
+}).join("")
